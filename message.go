@@ -89,9 +89,10 @@ const (
 	//             Section 12.1.2).
 	//   6.00-7.31 Reserved
 	// 6.00-6.31
-	GITERLAB_ERRNO_OK              = 192 // 正常响应  [PV1/PV2]
-	GITERLAB_ERRNO_PARAM_CONFIGURE = 193 // 有新的配置参数 [PV2]
-	GITERLAB_ERRNO_FIRMWARE_UPDATE = 194 // 有新的固件可以更新 [PV2]
+	GITERLAB_ERRNO_OK                = 192 // 正常响应  [PV1/PV2]
+	GITERLAB_ERRNO_PARAM_CONFIGURE   = 193 // 有新的配置参数 [PV2]
+	GITERLAB_ERRNO_FIRMWARE_UPDATE   = 194 // 有新的固件可以更新 [PV2]
+	GITERLAB_ERRNO_ENTER_FLIGHT_MODE = 220 // 进入飞行模式[PV2]
 
 	// 7.00-7.31
 	GITERLAB_ERRNO_ILLEGAL_KEY                    = 224 //    KEY错误，设备激活码错误 [PV1/PV2]
