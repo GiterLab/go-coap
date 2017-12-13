@@ -2,6 +2,7 @@
 package coap
 
 import (
+	"fmt"
 	"log"
 	"net"
 	"time"
@@ -28,6 +29,21 @@ func FuncHandler(f func(l *net.UDPConn, a *net.UDPAddr, m *Message) *Message) Ha
 
 func handlePacket(l *net.UDPConn, data []byte, u *net.UDPAddr,
 	rh Handler) {
+
+	defer func() {
+		data = nil
+
+		// recover panic
+		if err := recover(); err != nil {
+			if debug {
+				fmt.Println("[coap] handle packet panic:", err)
+			}
+		}
+	}()
+
+	if debug {
+		fmt.Println("[coap] Remote:", u, "Recv:", len(data), "Bytes", fmt.Sprintf("% X", data))
+	}
 
 	msg, err := ParseMessage(data)
 	if err != nil {
