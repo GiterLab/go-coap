@@ -89,34 +89,34 @@ const (
 	//             Section 12.1.2).
 	//   6.00-7.31 Reserved
 	// 6.00-6.31
-	GITERLAB_ERRNO_OK                = 192 // 正常响应  [PV1/PV2]
-	GITERLAB_ERRNO_PARAM_CONFIGURE   = 193 // 有新的配置参数 [PV2]
-	GITERLAB_ERRNO_FIRMWARE_UPDATE   = 194 // 有新的固件可以更新 [PV2]
-	GITERLAB_ERRNO_ENTER_FLIGHT_MODE = 220 // 进入飞行模式[PV2]
+	GiterlabErrnoOk              = 192 // 正常响应  [PV1/PV2]
+	GiterlabErrnoParamConfigure  = 193 // 有新的配置参数 [PV2]
+	GiterlabErrnoFirmwareUpdate  = 194 // 有新的固件可以更新 [PV2]
+	GiterlabErrnoEnterFlightMode = 220 // 进入飞行模式[PV2]
 
 	// 7.00-7.31
-	GITERLAB_ERRNO_ILLEGAL_KEY                    = 224 //    KEY错误，设备激活码错误 [PV1/PV2]
-	GITERLAB_ERRNO_DATA_ERROR                     = 225 //    数据错误 [PV1/PV2]
-	GITERLAB_ERRNO_DEVICE_NOT_EXIST               = 226 //    设备不存在或设备传感器类型匹配错误 [PV1/PV2]
-	GITERLAB_ERRNO_TIME_EXPIRED                   = 227 //    时间过期 [PV1/PV2]
-	GITERLAB_ERRNO_NOT_SUPPORT_PROTOCOL_VERSION   = 228 //    不支持的协议版本 [PV1/PV2]
-	GITERLAB_ERRNO_PROTOCOL_PARSING_ERRORS        = 229 //    议解析错误 [PV1/PV2]
-	GITERLAB_ERRNO_REQUEST_TIMEOUT                = 230 // [*]请求超时 [PV1/PV2]
-	GITERLAB_ERRNO_OPT_PROTOCOL_PARSING_ERRORS    = 231 //    可选附加头解析错误 [PV1/PV2]
-	GITERLAB_ERRNO_NOT_SUPPORT_ANALYTICAL_METHODS = 232 //    不支持的可选附加头解析方法 [PV1/PV2]
-	GITERLAB_ERRNO_NOT_SUPPORT_PACKET_TYPE        = 233 //    不支持的包类型 [PV1/PV2]
-	GITERLAB_ERRNO_DATA_DECODING_ERROR            = 234 //    数据解码错误 [PV1/PV2]
-	GITERLAB_ERRNO_PACKAGE_LENGTH_ERROR           = 235 //    数据包长度字段错误 [PV1/PV2]
-	GITERLAB_ERRNO_DUOXIEYUN_SERVER_REQUEST_BUSY  = 236 // [*]多协云服务器请求失败 [PV1过时了]
-	GITERLAB_ERRNO_SLUAN_SERVER_REQUEST_BUSY      = 237 // [*]石峦服务器请求失败 [PV2过时了]
-	GITERLAB_ERRNO_CACHE_SERVICE_ERRORS           = 238 // [*]缓存服务出错 [PV1/PV2]
-	GITERLAB_ERRNO_TABLE_STORE_SERVICE_ERRORS     = 239 // [*]表格存储服务出错 [PV1/PV2]
-	GITERLAB_ERRNO_DATABASE_SERVICE_ERRORS        = 240 // [*]数据库存储出错 [PV1/PV2]
-	GITERLAB_ERRNO_NOT_SUPPORT_ENCODING_TYPE      = 241 //    不支持的编码类型 [PV1/PV2]
-	GITERLAB_ERRNO_DEVICE_REPEAT_REGISTERED       = 242 //    设备重复注册 [PV2]
-	GITERLAB_ERRNO_DEVICE_SIM_CARD_USED           = 243 //    设备手机卡重复使用 [PV2]
-	GITERLAB_ERRNO_DEVICE_SIM_CARD_ILLEGAL        = 244 //    设备手机卡未登记，非法的SIM卡 [PV2]
-	GITERLAB_ERRNO_DEVICE_UPDATE_FORCED_FAILED    = 245 //    强制更新设备信息失败 [PV2]
+	GiterlabErrnoIllegalKey                  = 224 //    KEY错误，设备激活码错误 [PV1/PV2]
+	GiterlabErrnoDataError                   = 225 //    数据错误 [PV1/PV2]
+	GiterlabErrnoDeviceNotExist              = 226 //    设备不存在或设备传感器类型匹配错误 [PV1/PV2]
+	GiterlabErrnoTimeExpired                 = 227 //    时间过期 [PV1/PV2]
+	GiterlabErrnoNotSupportProtocolVersion   = 228 //    不支持的协议版本 [PV1/PV2]
+	GiterlabErrnoProtocolParsingErrors       = 229 //    议解析错误 [PV1/PV2]
+	GiterlabErrnoRequestTimeout              = 230 // [*]请求超时 [PV1/PV2]
+	GiterlabErrnoOptProtocolParsingErrors    = 231 //    可选附加头解析错误 [PV1/PV2]
+	GiterlabErrnoNotSupportAnalyticalMethods = 232 //    不支持的可选附加头解析方法 [PV1/PV2]
+	GiterlabErrnoNotSupportPacketType        = 233 //    不支持的包类型 [PV1/PV2]
+	GiterlabErrnoDataDecodingError           = 234 //    数据解码错误 [PV1/PV2]
+	GiterlabErrnoPackageLengthError          = 235 //    数据包长度字段错误 [PV1/PV2]
+	GiterlabErrnoDuoxieyunServerRequestBusy  = 236 // [*]多协云服务器请求失败 [PV1过时了]
+	GiterlabErrnoSluanServerRequestBusy      = 237 // [*]石峦服务器请求失败 [PV2过时了]
+	GiterlabErrnoCacheServiceErrors          = 238 // [*]缓存服务出错 [PV1/PV2]
+	GiterlabErrnoTableStoreServiceErrors     = 239 // [*]表格存储服务出错 [PV1/PV2]
+	GiterlabErrnoDatabaseServiceErrors       = 240 // [*]数据库存储出错 [PV1/PV2]
+	GiterlabErrnoNotSupportEncodingType      = 241 //    不支持的编码类型 [PV1/PV2]
+	GiterlabErrnoDeviceRepeatRegistered      = 242 //    设备重复注册 [PV2]
+	GiterlabErrnoDeviceSimCardUsed           = 243 //    设备手机卡重复使用 [PV2]
+	GiterlabErrnoDeviceSimCardIllegal        = 244 //    设备手机卡未登记，非法的SIM卡 [PV2]
+	GiterlabErrnoDeviceUpdateForcedFailed    = 245 //    强制更新设备信息失败 [PV2]
 )
 
 var codeNames = [256]string{
@@ -146,32 +146,32 @@ var codeNames = [256]string{
 	GatewayTimeout:        "GatewayTimeout",
 	ProxyingNotSupported:  "ProxyingNotSupported",
 
-	GITERLAB_ERRNO_OK:              "GITERLAB_ERRNO_OK:",
-	GITERLAB_ERRNO_PARAM_CONFIGURE: "GITERLAB_ERRNO_PARAM_CONFIGURE",
-	GITERLAB_ERRNO_FIRMWARE_UPDATE: "GITERLAB_ERRNO_FIRMWARE_UPDATE",
+	GiterlabErrnoOk:             "giterlabErrnoOk:",
+	GiterlabErrnoParamConfigure: "giterlabErrnoParamConfigure",
+	GiterlabErrnoFirmwareUpdate: "giterlabErrnoFirmwareUpdate",
 
-	GITERLAB_ERRNO_ILLEGAL_KEY:                    "GITERLAB_ERRNO_ILLEGAL_KEY",
-	GITERLAB_ERRNO_DATA_ERROR:                     "GITERLAB_ERRNO_DATA_ERROR",
-	GITERLAB_ERRNO_DEVICE_NOT_EXIST:               "GITERLAB_ERRNO_DEVICE_NOT_EXIST",
-	GITERLAB_ERRNO_TIME_EXPIRED:                   "GITERLAB_ERRNO_TIME_EXPIRED",
-	GITERLAB_ERRNO_NOT_SUPPORT_PROTOCOL_VERSION:   "GITERLAB_ERRNO_NOT_SUPPORT_PROTOCOL_VERSION",
-	GITERLAB_ERRNO_PROTOCOL_PARSING_ERRORS:        "GITERLAB_ERRNO_PROTOCOL_PARSING_ERRORS",
-	GITERLAB_ERRNO_REQUEST_TIMEOUT:                "GITERLAB_ERRNO_REQUEST_TIMEOUT",
-	GITERLAB_ERRNO_OPT_PROTOCOL_PARSING_ERRORS:    "GITERLAB_ERRNO_OPT_PROTOCOL_PARSING_ERRORS",
-	GITERLAB_ERRNO_NOT_SUPPORT_ANALYTICAL_METHODS: "GITERLAB_ERRNO_NOT_SUPPORT_ANALYTICAL_METHODS",
-	GITERLAB_ERRNO_NOT_SUPPORT_PACKET_TYPE:        "GITERLAB_ERRNO_NOT_SUPPORT_PACKET_TYPE",
-	GITERLAB_ERRNO_DATA_DECODING_ERROR:            "GITERLAB_ERRNO_DATA_DECODING_ERROR",
-	GITERLAB_ERRNO_PACKAGE_LENGTH_ERROR:           "GITERLAB_ERRNO_PACKAGE_LENGTH_ERROR",
-	GITERLAB_ERRNO_DUOXIEYUN_SERVER_REQUEST_BUSY:  "GITERLAB_ERRNO_DUOXIEYUN_SERVER_REQUEST_BUSY",
-	GITERLAB_ERRNO_SLUAN_SERVER_REQUEST_BUSY:      "GITERLAB_ERRNO_SLUAN_SERVER_REQUEST_BUSY",
-	GITERLAB_ERRNO_CACHE_SERVICE_ERRORS:           "GITERLAB_ERRNO_CACHE_SERVICE_ERRORS",
-	GITERLAB_ERRNO_TABLE_STORE_SERVICE_ERRORS:     "GITERLAB_ERRNO_TABLE_STORE_SERVICE_ERRORS",
-	GITERLAB_ERRNO_DATABASE_SERVICE_ERRORS:        "GITERLAB_ERRNO_DATABASE_SERVICE_ERRORS",
-	GITERLAB_ERRNO_NOT_SUPPORT_ENCODING_TYPE:      "GITERLAB_ERRNO_NOT_SUPPORT_ENCODING_TYPE",
-	GITERLAB_ERRNO_DEVICE_REPEAT_REGISTERED:       "GITERLAB_ERRNO_DEVICE_REPEAT_REGISTERED",
-	GITERLAB_ERRNO_DEVICE_SIM_CARD_USED:           "GITERLAB_ERRNO_DEVICE_SIM_CARD_USED",
-	GITERLAB_ERRNO_DEVICE_SIM_CARD_ILLEGAL:        "GITERLAB_ERRNO_DEVICE_SIM_CARD_ILLEGAL",
-	GITERLAB_ERRNO_DEVICE_UPDATE_FORCED_FAILED:    "GITERLAB_ERRNO_DEVICE_UPDATE_FORCED_FAILED",
+	GiterlabErrnoIllegalKey:                  "GiterlabErrnoIllegalKey",
+	GiterlabErrnoDataError:                   "GiterlabErrnoDataError",
+	GiterlabErrnoDeviceNotExist:              "GiterlabErrnoDeviceNotExist",
+	GiterlabErrnoTimeExpired:                 "GiterlabErrnoTimeExpired",
+	GiterlabErrnoNotSupportProtocolVersion:   "GiterlabErrnoNotSupportProtocolVersion",
+	GiterlabErrnoProtocolParsingErrors:       "GiterlabErrnoProtocolParsingErrors",
+	GiterlabErrnoRequestTimeout:              "GiterlabErrnoRequestTimeout",
+	GiterlabErrnoOptProtocolParsingErrors:    "GiterlabErrnoOptProtocolParsingErrors",
+	GiterlabErrnoNotSupportAnalyticalMethods: "GiterlabErrnoNotSupportAnalyticalMethods",
+	GiterlabErrnoNotSupportPacketType:        "GiterlabErrnoNotSupportPacketType",
+	GiterlabErrnoDataDecodingError:           "GiterlabErrnoDataDecodingError",
+	GiterlabErrnoPackageLengthError:          "GiterlabErrnoPackageLengthError",
+	GiterlabErrnoDuoxieyunServerRequestBusy:  "GiterlabErrnoDuoxieyunServerRequestBusy",
+	GiterlabErrnoSluanServerRequestBusy:      "GiterlabErrnoSluanServerRequestBusy",
+	GiterlabErrnoCacheServiceErrors:          "GiterlabErrnoCacheServiceErrors",
+	GiterlabErrnoTableStoreServiceErrors:     "GiterlabErrnoTableStoreServiceErrors",
+	GiterlabErrnoDatabaseServiceErrors:       "GiterlabErrnoDatabaseServiceErrors",
+	GiterlabErrnoNotSupportEncodingType:      "GiterlabErrnoNotSupportEncodingType",
+	GiterlabErrnoDeviceRepeatRegistered:      "GiterlabErrnoDeviceRepeatRegistered",
+	GiterlabErrnoDeviceSimCardUsed:           "GiterlabErrnoDeviceSimCardUsed",
+	GiterlabErrnoDeviceSimCardIllegal:        "GiterlabErrnoDeviceSimCardIllegal",
+	GiterlabErrnoDeviceUpdateForcedFailed:    "GiterlabErrnoDeviceUpdateForcedFailed",
 }
 
 func init() {
@@ -250,9 +250,9 @@ const (
 	// 65000 and 65535 inclusive are reserved for experiments.  They are not
 	// meant for vendor-specific use of any kind and MUST NOT be used in
 	// operational deployments.
-	GiterLabId  OptionID = 65000
+	GiterLabID  OptionID = 65000
 	GiterLabKey OptionID = 65001
-	AccessId    OptionID = 65002
+	AccessID    OptionID = 65002
 	AccessKey   OptionID = 65003
 )
 
@@ -291,9 +291,9 @@ var optionDefs = [65536]optionDef{
 	ProxyScheme:   optionDef{valueFormat: valueString, minLen: 1, maxLen: 255},
 	Size1:         optionDef{valueFormat: valueUint, minLen: 0, maxLen: 4},
 
-	GiterLabId:  optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
+	GiterLabID:  optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
 	GiterLabKey: optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
-	AccessId:    optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
+	AccessID:    optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
 	AccessKey:   optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
 }
 
@@ -383,9 +383,8 @@ func parseOptionValue(optionID OptionID, valueBuf []byte) interface{} {
 		intValue := decodeInt(valueBuf)
 		if optionID == ContentFormat || optionID == Accept {
 			return MediaType(intValue)
-		} else {
-			return intValue
 		}
+		return intValue
 	case valueString:
 		return string(valueBuf)
 	case valueOpaque, valueEmpty:
