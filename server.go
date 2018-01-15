@@ -35,14 +35,27 @@ func handlePacket(l *net.UDPConn, data []byte, u *net.UDPAddr,
 
 		// recover panic
 		if err := recover(); err != nil {
-			if debug {
+			if debugEnable {
 				fmt.Println("[coap] handle packet panic:", err)
 			}
 		}
 	}()
 
-	if debug {
+	if debugEnable {
 		fmt.Println("[coap] Remote:", u, "Recv:", len(data), "Bytes", fmt.Sprintf("% X", data))
+	}
+
+	// health monitor for aliyun
+	// Request:  RUOK
+	// Response: IMOK
+	if healthMonitorEnable {
+		if len(data) == 4 {
+			if data[0] == 'R' && data[1] == 'U' && data[2] == 'O' && data[3] == 'K' {
+				// Response IMOK
+				l.WriteToUDP([]byte("IMOK"), u)
+				return
+			}
+		}
 	}
 
 	msg, err := ParseMessage(data)

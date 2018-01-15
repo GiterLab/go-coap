@@ -1,12 +1,19 @@
 package coap
 
-var debug bool
+var debugEnable bool
+var healthMonitorEnable bool
 
 func init() {
-	debug = false
+	debugEnable = false
+	healthMonitorEnable = false
 }
 
-// Debug swich debug mode
-func Debug(mode bool) {
-	debug = mode
+// Debug Enable debug
+func Debug(enable bool) {
+	debugEnable = enable
+}
+
+// HealthMonitor Enable health monitor
+func HealthMonitor(enable bool) {
+	healthMonitorEnable = enable
 }
