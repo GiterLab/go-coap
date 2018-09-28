@@ -122,7 +122,8 @@ func Serve(listener *net.UDPConn, rh Handler) error {
 				time.Sleep(5 * time.Millisecond)
 				continue
 			}
-			return err
+			GLog.Debug("[coap] Serve ReadFromUDP error: %s", err)
+			continue
 		}
 		tmp := make([]byte, nr)
 		copy(tmp, buf)
