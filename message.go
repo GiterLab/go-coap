@@ -250,10 +250,11 @@ const (
 	// 65000 and 65535 inclusive are reserved for experiments.  They are not
 	// meant for vendor-specific use of any kind and MUST NOT be used in
 	// operational deployments.
-	GiterLabID  OptionID = 65000
-	GiterLabKey OptionID = 65001
-	AccessID    OptionID = 65002
-	AccessKey   OptionID = 65003
+	GiterLabID    OptionID = 65000
+	GiterLabKey   OptionID = 65001
+	AccessID      OptionID = 65002
+	AccessKey     OptionID = 65003
+	PackageNumber OptionID = 65100
 )
 
 // Option value format (RFC7252 section 3.2)
