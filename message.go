@@ -292,10 +292,11 @@ var optionDefs = [65536]optionDef{
 	ProxyScheme:   optionDef{valueFormat: valueString, minLen: 1, maxLen: 255},
 	Size1:         optionDef{valueFormat: valueUint, minLen: 0, maxLen: 4},
 
-	GiterLabID:  optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
-	GiterLabKey: optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
-	AccessID:    optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
-	AccessKey:   optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
+	GiterLabID:    optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
+	GiterLabKey:   optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
+	AccessID:      optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
+	AccessKey:     optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
+	PackageNumber: optionDef{valueFormat: valueUint, minLen: 0, maxLen: 2},
 }
 
 // MediaType specifies the content type of a message.
