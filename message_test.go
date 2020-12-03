@@ -35,7 +35,7 @@ func assertEqualMessages(t *testing.T, e, a Message) {
 	if len(e.opts) != len(a.opts) {
 		t.Errorf("Expected %v options, got %v", len(e.opts), len(a.opts))
 	} else {
-		for i, _ := range e.opts {
+		for i := range e.opts {
 			if e.opts[i].ID != a.opts[i].ID {
 				t.Errorf("Expected option ID %v, got %v", e.opts[i].ID, a.opts[i].ID)
 				continue
@@ -131,7 +131,7 @@ func TestOptionToBytesPanic(t *testing.T) {
 }
 
 func TestTypeString(t *testing.T) {
-	tests := map[COAPType]string{
+	tests := map[CType]string{
 		Confirmable:    "Confirmable",
 		NonConfirmable: "NonConfirmable",
 		255:            "Unknown (0xff)",
@@ -146,7 +146,7 @@ func TestTypeString(t *testing.T) {
 }
 
 func TestCodeString(t *testing.T) {
-	tests := map[COAPCode]string{
+	tests := map[CCode]string{
 		0:             "Unknown (0x0)",
 		GET:           "GET",
 		POST:          "POST",
@@ -380,9 +380,9 @@ func TestEncodeMessageVerySmall2(t *testing.T) {
 
 func TestEncodeSeveral(t *testing.T) {
 	tests := map[string][]string{
-		"a":   []string{"a"},
-		"axe": []string{"axe"},
-		"a/b/c/d/e/f/h/g/i/j": []string{"a", "b", "c", "d", "e",
+		"a":   {"a"},
+		"axe": {"axe"},
+		"a/b/c/d/e/f/h/g/i/j": {"a", "b", "c", "d", "e",
 			"f", "h", "g", "i", "j"},
 	}
 	for p, a := range tests {

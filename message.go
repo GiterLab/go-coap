@@ -10,18 +10,18 @@ import (
 	"strings"
 )
 
-// COAPType represents the message type.
-type COAPType uint8
+// CType represents the message type.
+type CType uint8
 
 const (
 	// Confirmable messages require acknowledgements.
-	Confirmable COAPType = 0
+	Confirmable CType = 0
 	// NonConfirmable messages do not require acknowledgements.
-	NonConfirmable COAPType = 1
+	NonConfirmable CType = 1
 	// Acknowledgement is a message indicating a response to confirmable message.
-	Acknowledgement COAPType = 2
+	Acknowledgement CType = 2
 	// Reset indicates a permanent negative acknowledgement.
-	Reset COAPType = 3
+	Reset CType = 3
 )
 
 var typeNames = [256]string{
@@ -39,44 +39,44 @@ func init() {
 	}
 }
 
-func (t COAPType) String() string {
+func (t CType) String() string {
 	return typeNames[t]
 }
 
-// COAPCode is the type used for both request and response codes.
-type COAPCode uint8
+// CCode is the type used for both request and response codes.
+type CCode uint8
 
 // Request Codes
 const (
-	GET    COAPCode = 1
-	POST   COAPCode = 2
-	PUT    COAPCode = 3
-	DELETE COAPCode = 4
+	GET    CCode = 1
+	POST   CCode = 2
+	PUT    CCode = 3
+	DELETE CCode = 4
 )
 
 // Response Codes
 const (
-	Created               COAPCode = 65
-	Deleted               COAPCode = 66
-	Valid                 COAPCode = 67
-	Changed               COAPCode = 68
-	Content               COAPCode = 69
-	BadRequest            COAPCode = 128
-	Unauthorized          COAPCode = 129
-	BadOption             COAPCode = 130
-	Forbidden             COAPCode = 131
-	NotFound              COAPCode = 132
-	MethodNotAllowed      COAPCode = 133
-	NotAcceptable         COAPCode = 134
-	PreconditionFailed    COAPCode = 140
-	RequestEntityTooLarge COAPCode = 141
-	UnsupportedMediaType  COAPCode = 143
-	InternalServerError   COAPCode = 160
-	NotImplemented        COAPCode = 161
-	BadGateway            COAPCode = 162
-	ServiceUnavailable    COAPCode = 163
-	GatewayTimeout        COAPCode = 164
-	ProxyingNotSupported  COAPCode = 165
+	Created               CCode = 65
+	Deleted               CCode = 66
+	Valid                 CCode = 67
+	Changed               CCode = 68
+	Content               CCode = 69
+	BadRequest            CCode = 128
+	Unauthorized          CCode = 129
+	BadOption             CCode = 130
+	Forbidden             CCode = 131
+	NotFound              CCode = 132
+	MethodNotAllowed      CCode = 133
+	NotAcceptable         CCode = 134
+	PreconditionFailed    CCode = 140
+	RequestEntityTooLarge CCode = 141
+	UnsupportedMediaType  CCode = 143
+	InternalServerError   CCode = 160
+	NotImplemented        CCode = 161
+	BadGateway            CCode = 162
+	ServiceUnavailable    CCode = 163
+	GatewayTimeout        CCode = 164
+	ProxyingNotSupported  CCode = 165
 
 	// All Code values are assigned by sub-registries according to the
 	// following ranges:
@@ -182,7 +182,7 @@ func init() {
 	}
 }
 
-func (c COAPCode) String() string {
+func (c CCode) String() string {
 	return codeNames[c]
 }
 
@@ -275,28 +275,28 @@ type optionDef struct {
 }
 
 var optionDefs = [65536]optionDef{
-	IfMatch:       optionDef{valueFormat: valueOpaque, minLen: 0, maxLen: 8},
-	URIHost:       optionDef{valueFormat: valueString, minLen: 1, maxLen: 255},
-	ETag:          optionDef{valueFormat: valueOpaque, minLen: 1, maxLen: 8},
-	IfNoneMatch:   optionDef{valueFormat: valueEmpty, minLen: 0, maxLen: 0},
-	Observe:       optionDef{valueFormat: valueUint, minLen: 0, maxLen: 3},
-	URIPort:       optionDef{valueFormat: valueUint, minLen: 0, maxLen: 2},
-	LocationPath:  optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
-	URIPath:       optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
-	ContentFormat: optionDef{valueFormat: valueUint, minLen: 0, maxLen: 2},
-	MaxAge:        optionDef{valueFormat: valueUint, minLen: 0, maxLen: 4},
-	URIQuery:      optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
-	Accept:        optionDef{valueFormat: valueUint, minLen: 0, maxLen: 2},
-	LocationQuery: optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
-	ProxyURI:      optionDef{valueFormat: valueString, minLen: 1, maxLen: 1034},
-	ProxyScheme:   optionDef{valueFormat: valueString, minLen: 1, maxLen: 255},
-	Size1:         optionDef{valueFormat: valueUint, minLen: 0, maxLen: 4},
+	IfMatch:       {valueFormat: valueOpaque, minLen: 0, maxLen: 8},
+	URIHost:       {valueFormat: valueString, minLen: 1, maxLen: 255},
+	ETag:          {valueFormat: valueOpaque, minLen: 1, maxLen: 8},
+	IfNoneMatch:   {valueFormat: valueEmpty, minLen: 0, maxLen: 0},
+	Observe:       {valueFormat: valueUint, minLen: 0, maxLen: 3},
+	URIPort:       {valueFormat: valueUint, minLen: 0, maxLen: 2},
+	LocationPath:  {valueFormat: valueString, minLen: 0, maxLen: 255},
+	URIPath:       {valueFormat: valueString, minLen: 0, maxLen: 255},
+	ContentFormat: {valueFormat: valueUint, minLen: 0, maxLen: 2},
+	MaxAge:        {valueFormat: valueUint, minLen: 0, maxLen: 4},
+	URIQuery:      {valueFormat: valueString, minLen: 0, maxLen: 255},
+	Accept:        {valueFormat: valueUint, minLen: 0, maxLen: 2},
+	LocationQuery: {valueFormat: valueString, minLen: 0, maxLen: 255},
+	ProxyURI:      {valueFormat: valueString, minLen: 1, maxLen: 1034},
+	ProxyScheme:   {valueFormat: valueString, minLen: 1, maxLen: 255},
+	Size1:         {valueFormat: valueUint, minLen: 0, maxLen: 4},
 
-	GiterLabID:    optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
-	GiterLabKey:   optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
-	AccessID:      optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
-	AccessKey:     optionDef{valueFormat: valueString, minLen: 0, maxLen: 255},
-	PackageNumber: optionDef{valueFormat: valueUint, minLen: 0, maxLen: 2},
+	GiterLabID:    {valueFormat: valueString, minLen: 0, maxLen: 255},
+	GiterLabKey:   {valueFormat: valueString, minLen: 0, maxLen: 255},
+	AccessID:      {valueFormat: valueString, minLen: 0, maxLen: 255},
+	AccessKey:     {valueFormat: valueString, minLen: 0, maxLen: 255},
+	PackageNumber: {valueFormat: valueUint, minLen: 0, maxLen: 2},
 }
 
 // MediaType specifies the content type of a message.
@@ -385,9 +385,8 @@ func parseOptionValue(optionID OptionID, valueBuf []byte) interface{} {
 		intValue := decodeInt(valueBuf)
 		if optionID == ContentFormat || optionID == Accept {
 			return MediaType(intValue)
-		} else {
-			return intValue
 		}
+		return intValue
 	case valueString:
 		return string(valueBuf)
 	case valueOpaque, valueEmpty:
@@ -426,8 +425,8 @@ func (o options) Minus(oid OptionID) options {
 
 // Message is a CoAP message.
 type Message struct {
-	Type      COAPType
-	Code      COAPCode
+	Type      CType
+	Code      CCode
 	MessageID uint16
 
 	Token, Payload []byte
@@ -652,13 +651,13 @@ func (m *Message) UnmarshalBinary(data []byte) error {
 		return errors.New("invalid version")
 	}
 
-	m.Type = COAPType((data[0] >> 4) & 0x3)
+	m.Type = CType((data[0] >> 4) & 0x3)
 	tokenLen := int(data[0] & 0xf)
 	if tokenLen > 8 {
 		return ErrInvalidTokenLen
 	}
 
-	m.Code = COAPCode(data[1])
+	m.Code = CCode(data[1])
 	m.MessageID = binary.BigEndian.Uint16(data[2:4])
 
 	if tokenLen > 0 {
