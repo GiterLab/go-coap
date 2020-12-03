@@ -254,6 +254,9 @@ const (
 	GiterLabKey   OptionID = 65001
 	AccessID      OptionID = 65002
 	AccessKey     OptionID = 65003
+	CheckCRC32    OptionID = 65004
+	EncoderType   OptionID = 65005
+	EncoderID     OptionID = 65006
 	PackageNumber OptionID = 65100
 )
 
@@ -292,10 +295,14 @@ var optionDefs = [65536]optionDef{
 	ProxyScheme:   {valueFormat: valueString, minLen: 1, maxLen: 255},
 	Size1:         {valueFormat: valueUint, minLen: 0, maxLen: 4},
 
+	// GiterLab: add private options
 	GiterLabID:    {valueFormat: valueString, minLen: 0, maxLen: 255},
 	GiterLabKey:   {valueFormat: valueString, minLen: 0, maxLen: 255},
 	AccessID:      {valueFormat: valueString, minLen: 0, maxLen: 255},
 	AccessKey:     {valueFormat: valueString, minLen: 0, maxLen: 255},
+	CheckCRC32:    {valueFormat: valueUint, minLen: 0, maxLen: 4},
+	EncoderType:   {valueFormat: valueUint, minLen: 0, maxLen: 4},
+	EncoderID:     {valueFormat: valueUint, minLen: 0, maxLen: 4},
 	PackageNumber: {valueFormat: valueUint, minLen: 0, maxLen: 2},
 }
 
