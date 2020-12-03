@@ -300,7 +300,7 @@ var optionDefs = [65536]optionDef{
 }
 
 // MediaType specifies the content type of a message.
-type MediaType byte
+type MediaType uint16
 
 // Content types.
 const (
@@ -385,8 +385,9 @@ func parseOptionValue(optionID OptionID, valueBuf []byte) interface{} {
 		intValue := decodeInt(valueBuf)
 		if optionID == ContentFormat || optionID == Accept {
 			return MediaType(intValue)
+		} else {
+			return intValue
 		}
-		return intValue
 	case valueString:
 		return string(valueBuf)
 	case valueOpaque, valueEmpty:
