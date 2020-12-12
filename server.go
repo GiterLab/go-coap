@@ -127,9 +127,6 @@ func Serve(listener *net.UDPConn, rh Handler) error {
 			}
 			continue
 		}
-		if debugEnable && GLog != nil {
-			GLog.Debug("[coap] Serve ReadFromUDP: size = %d, buf = %s", nr, fmt.Sprintf("% X", buf[:nr]))
-		}
 		tmp := make([]byte, nr)
 		copy(tmp, buf)
 		go handlePacket(listener, tmp, addr, rh)
