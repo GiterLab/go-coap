@@ -4,7 +4,7 @@ import (
 	"log"
 	"net"
 
-	"github.com/dustin/go-coap"
+	"github.com/GiterLab/go-coap"
 )
 
 func handleA(l *net.UDPConn, a *net.UDPAddr, m *coap.Message) *coap.Message {

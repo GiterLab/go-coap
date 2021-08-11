@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/dustin/go-coap"
+	"github.com/GiterLab/go-coap"
 )
 
 func main() {
@@ -38,5 +38,4 @@ func main() {
 	if rv != nil {
 		log.Printf("Response payload: %s", rv.Payload)
 	}
-
 }

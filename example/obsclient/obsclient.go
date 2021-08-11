@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/dustin/go-coap"
+	"github.com/GiterLab/go-coap"
 )
 
 func main() {
@@ -38,5 +38,4 @@ func main() {
 
 	}
 	log.Printf("Done...\n")
-
 }

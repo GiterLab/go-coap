@@ -35,14 +35,14 @@ func handlePacket(l *net.UDPConn, data []byte, u *net.UDPAddr,
 
 		// recover panic
 		if err := recover(); err != nil {
-			if debugEnable && GLog != nil {
-				GLog.Debug("[coap] handle packet panic: %s", err)
+			if debugEnable {
+				TraceError("[coap] handle packet panic: %s", err)
 			}
 		}
 	}()
 
-	if debugEnable && GLog != nil {
-		GLog.Debug("[coap] Remote: %v, Recv: %d, Bytes: %s", u, len(data), fmt.Sprintf("% X", data))
+	if debugEnable {
+		TraceInfo("[coap] Remote: %v, Recv: %d, Bytes: %s", u, len(data), fmt.Sprintf("% X", data))
 	}
 
 	// health monitor for aliyun
@@ -122,8 +122,8 @@ func Serve(listener *net.UDPConn, rh Handler) error {
 				time.Sleep(5 * time.Millisecond)
 				continue
 			}
-			if debugEnable && GLog != nil {
-				GLog.Debug("[coap] Serve ReadFromUDP error: %s", err)
+			if debugEnable {
+				TraceInfo("[coap] Serve ReadFromUDP error: %s", err)
 			}
 			continue
 		}
