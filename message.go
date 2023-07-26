@@ -92,6 +92,7 @@ const (
 	GiterlabErrnoOk              = 192 // 正常响应  [PV1/PV2]
 	GiterlabErrnoParamConfigure  = 193 // 有新的配置参数 [PV2]
 	GiterlabErrnoFirmwareUpdate  = 194 // 有新的固件可以更新 [PV2]
+	GiterlabErrnoUserCommand     = 195 // 有用户命令需要执行 [PV2]
 	GiterlabErrnoEnterFlightMode = 220 // 进入飞行模式[PV2]
 
 	// 7.00-7.31
