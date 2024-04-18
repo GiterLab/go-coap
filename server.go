@@ -42,7 +42,21 @@ func handlePacket(l *net.UDPConn, data []byte, u *net.UDPAddr,
 	}()
 
 	if debugEnable {
-		TraceInfo("[coap] Remote: %v, Recv: %d, Bytes: %s", u, len(data), fmt.Sprintf("% X", data))
+		tracePrintOut := true
+		// health monitor for aliyun
+		// Request:  RUOK
+		// do not print out log for health monitor
+		if healthMonitorEnable {
+			if len(data) == 4 {
+				if data[0] == 'R' && data[1] == 'U' && data[2] == 'O' && data[3] == 'K' {
+					tracePrintOut = false
+				}
+			}
+		}
+
+		if tracePrintOut {
+			TraceInfo("[coap] Remote: %v, Recv: %d, Bytes: %s", u, len(data), fmt.Sprintf("% X", data))
+		}
 	}
 
 	// health monitor for aliyun
