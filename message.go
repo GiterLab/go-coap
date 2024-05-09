@@ -304,7 +304,7 @@ var optionDefs = [65536]optionDef{
 	CheckCRC32:    {valueFormat: valueUint, minLen: 0, maxLen: 4},
 	EncoderType:   {valueFormat: valueUint, minLen: 0, maxLen: 4},
 	EncoderID:     {valueFormat: valueUint, minLen: 0, maxLen: 4},
-	PackageNumber: {valueFormat: valueUint, minLen: 0, maxLen: 2},
+	PackageNumber: {valueFormat: valueUint, minLen: 0, maxLen: 4},
 }
 
 // MediaType specifies the content type of a message.
