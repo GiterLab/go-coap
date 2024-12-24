@@ -258,6 +258,7 @@ const (
 	CheckCRC32    OptionID = 65004
 	EncoderType   OptionID = 65005
 	EncoderID     OptionID = 65006
+	Flags         OptionID = 65007
 	PackageNumber OptionID = 65100
 )
 
@@ -304,6 +305,7 @@ var optionDefs = [65536]optionDef{
 	CheckCRC32:    {valueFormat: valueUint, minLen: 0, maxLen: 4},
 	EncoderType:   {valueFormat: valueUint, minLen: 0, maxLen: 4},
 	EncoderID:     {valueFormat: valueUint, minLen: 0, maxLen: 4},
+	Flags:         {valueFormat: valueUint, minLen: 0, maxLen: 4},
 	PackageNumber: {valueFormat: valueUint, minLen: 0, maxLen: 4},
 }
 
